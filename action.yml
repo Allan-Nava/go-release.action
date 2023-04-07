@@ -1,0 +1,7 @@
+name: 'Go Release Binary'
+description: 'Automate publishing Go build artifacts for GitHub releases through GitHub Actions'
+author: 'Allan-Nava'
+#inputs:
+branding:
+  icon: 'package'
+  color: 'orange'
