@@ -7,7 +7,7 @@ LABEL "com.github.actions.icon"="cpu"
 LABEL "com.github.actions.color"="orange"
 
 LABEL "name"="Automate publishing Go build artifacts for GitHub releases through GitHub Actions"
-LABEL "version"="1.3.0"
+LABEL "version"="1.5.0"
 LABEL "repository"="http://github.com/Allan-Nava/go-release.action"
 
 LABEL "maintainer"="Allan Nava <allan.nava@hiway.media> (https://hiway.media)"
