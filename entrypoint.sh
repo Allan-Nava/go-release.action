@@ -32,12 +32,12 @@ fi
 if [ -z "${EXTRA_FILES+x}" ]; then
 echo "::warning file=entrypoint.sh,line=33,col=1::EXTRA_FILES not set"
 fi
-
+#
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
-
+#
 FILE_LIST=`echo "${FILE_LIST}" | awk '{$1=$1};1'`
-
-
+#
+#
 if [ $GOOS == 'windows' ]; then
 ARCHIVE=tmp.zip
 zip -9r $ARCHIVE ${FILE_LIST}
@@ -45,11 +45,10 @@ else
 ARCHIVE=tmp.tgz
 tar cvfz $ARCHIVE ${FILE_LIST}
 fi
-
+#
 export CHECKSUM=$(md5sum ${ARCHIVE} | cut -d ' ' -f 1)
 #
 curl \
-  -v \
   -X POST \
   --data-binary "@${ARCHIVE}" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
@@ -58,9 +57,9 @@ curl \
   "${UPLOAD_URL}?name=${NAME}.${ARCHIVE/tmp./}"
 #
 curl \
-  -v \
   -X POST \
   --data $CHECKSUM \
   -H 'Content-Type: text/plain' \
   -H "Authorization: Bearer ${GITHUB_TOKEN}" \
   "${UPLOAD_URL}?name=${NAME}_checksum.txt"
+#
