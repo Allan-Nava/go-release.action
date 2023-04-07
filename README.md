@@ -30,6 +30,8 @@ jobs:
         GOARCH: "386"
         GOOS: linux
         EXTRA_FILES: "LICENSE"
+        #GOBUILD_PATH: ""
+    #
   release-linux-amd64:
     name: release linux/amd64
     runs-on: ubuntu-latest
@@ -42,6 +44,8 @@ jobs:
         GOARCH: amd64
         GOOS: linux
         EXTRA_FILES: "LICENSE"
+        #GOBUILD_PATH: ""
+    #
   release-linux-arm:
     name: release linux/386
     runs-on: ubuntu-latest
@@ -54,6 +58,8 @@ jobs:
         GOARCH: "arm"
         GOOS: linux
         EXTRA_FILES: "LICENSE"
+        #GOBUILD_PATH: ""
+    #
   release-linux-arm64:
     name: release linux/amd64
     runs-on: ubuntu-latest
@@ -66,6 +72,8 @@ jobs:
         GOARCH: arm64
         GOOS: linux
         EXTRA_FILES: "LICENSE"
+        #GOBUILD_PATH: ""
+    #
   release-darwin-amd64:
     name: release darwin/amd64
     runs-on: ubuntu-latest
@@ -78,6 +86,8 @@ jobs:
         GOARCH: amd64
         GOOS: darwin
         EXTRA_FILES: "LICENSE"
+        #GOBUILD_PATH: ""
+    #
   release-windows-386:
     name: release windows/386
     runs-on: ubuntu-latest
@@ -90,6 +100,8 @@ jobs:
         GOARCH: "386"
         GOOS: windows
         EXTRA_FILES: "LICENSE"
+        #GOBUILD_PATH: ""
+    #
   release-windows-amd64:
     name: release windows/amd64
     runs-on: ubuntu-latest
@@ -102,4 +114,5 @@ jobs:
         GOARCH: amd64
         GOOS: windows
         EXTRA_FILES: "LICENSE"
+        #GOBUILD_PATH: ""
 ```
