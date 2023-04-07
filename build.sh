@@ -26,10 +26,8 @@ else
   if [ -z "$GOBUILD_PATH" ]; then 
     # gobuild env is NULL
     go build "${CMD_PATH}"
-    #
    OUTPUT="${PROJECT_NAME}${EXT}"
-  else 
-    echo "GOBUILD_PATH ADDED:  ${GOBUILD_PATH}"; 
+  else
     go build "${GOBUILD_PATH}";
    fi
    OUTPUT="${PROJECT_NAME}${EXT}"
