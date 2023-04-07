@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: compile and release
-      uses: Allan-Nava/go-release.action@vv1.4.0
+      uses: Allan-Nava/go-release.action@v1.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: "386"
@@ -40,7 +40,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: compile and release
-      uses: Allan-Nava/go-release.action@vv1.4.0
+      uses: Allan-Nava/go-release.action@v1.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: amd64
@@ -55,7 +55,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: compile and release
-      uses: Allan-Nava/go-release.action@vv1.4.0
+      uses: Allan-Nava/go-release.action@v1.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: "arm"
@@ -70,7 +70,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: compile and release
-      uses: Allan-Nava/go-release.action@vv1.4.0
+      uses: Allan-Nava/go-release.action@v1.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: arm64
@@ -85,7 +85,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: compile and release
-      uses: Allan-Nava/go-release.action@vv1.4.0
+      uses: Allan-Nava/go-release.action@v1.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: amd64
@@ -100,7 +100,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: compile and release
-      uses: Allan-Nava/go-release.action@vv1.4.0
+      uses: Allan-Nava/go-release.action@v1.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: "386"
@@ -115,7 +115,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: compile and release
-      uses: Allan-Nava/go-release.action@vv1.4.0
+      uses: Allan-Nava/go-release.action@v1.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: amd64
