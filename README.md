@@ -1,4 +1,4 @@
-# Go Release Binary GitHub Action
+# Go Release Binary GitHub Action V2
 
 Automate publishing Go build artifacts for GitHub releases through GitHub Actions.
 
@@ -21,6 +21,7 @@ jobs:
   release-linux-386:
     name: release linux/386
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
     - uses: actions/checkout@master
     - name: compile and release
@@ -35,6 +36,7 @@ jobs:
   release-linux-amd64:
     name: release linux/amd64
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
     - uses: actions/checkout@master
     - name: compile and release
@@ -49,6 +51,7 @@ jobs:
   release-linux-arm:
     name: release linux/386
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
     - uses: actions/checkout@master
     - name: compile and release
@@ -63,6 +66,7 @@ jobs:
   release-linux-arm64:
     name: release linux/amd64
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
     - uses: actions/checkout@master
     - name: compile and release
@@ -77,6 +81,7 @@ jobs:
   release-darwin-amd64:
     name: release darwin/amd64
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
     - uses: actions/checkout@master
     - name: compile and release
@@ -91,6 +96,7 @@ jobs:
   release-windows-386:
     name: release windows/386
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
     - uses: actions/checkout@master
     - name: compile and release
@@ -105,6 +111,7 @@ jobs:
   release-windows-amd64:
     name: release windows/amd64
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
     - uses: actions/checkout@master
     - name: compile and release
