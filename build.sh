@@ -22,8 +22,13 @@ fi
 if [ -x "./build.sh" ]; then
   OUTPUT=`./build.sh "${CMD_PATH}"`
 else
-  go build "${CMD_PATH}"
-  OUTPUT="${PROJECT_NAME}${EXT}"
+  if [ -z "${BUILD_ARGS}" ]; then
+    go build "${CMD_PATH}"
+    OUTPUT="${PROJECT_NAME}${EXT}"
+  else 
+    go build ${BUILD_ARGS} "${CMD_PATH}"
+    OUTPUT="${PROJECT_NAME}${EXT}"
+  fi
 fi
 #
 echo ${OUTPUT}
