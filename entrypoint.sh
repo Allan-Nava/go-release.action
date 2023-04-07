@@ -51,7 +51,7 @@ export CHECKSUM=$(md5sum ${ARCHIVE} | cut -d ' ' -f 1)
 curl \
   -v \
   -X POST \
-  --data-binary @${ARCHIVE} \
+  --data-binary "@${ARCHIVE}" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   -H 'Content-Type: application/octet-stream' \
   -H "Authorization: Bearer ${GITHUB_TOKEN}" \
