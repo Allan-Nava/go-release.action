@@ -20,7 +20,11 @@ RELEASE_NAME=$(echo $EVENT_DATA | jq -r .release.tag_name)
 PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
 NAME="${NAME:-${PROJECT_NAME}_${RELEASE_NAME}}_${GOOS}_${GOARCH}"
 #
-RELEASE_URL=$(echo $EVENT_DATA | jq -r .release.url)
+RELEASE_URL=$(echo $EVENT_DATA | jq -r .release.url) 
+RELEASE_URL=$(echo $RELEASE_URL | awk '{n=split($0, a, "/"); print a[n]}')
+RELEASE_URL="https://github.com/upload/releases/${RELEASE_URL}"
+#
+echo "RELEASE_URL ${RELEASE_URL}"
 #
 #echo ":: NAME=${NAME} | PROJECT_NAME=${PROJECT_NAME} ::"
 if [ -z "${NAME+x}" ]; then
@@ -50,13 +54,13 @@ fi
 #
 export CHECKSUM=$(md5sum ${ARCHIVE} | cut -d ' ' -f 1)
 #
-#curl \
-#  -X PUT \
-#  --data-binary "@${ARCHIVE}" \
-#  -H "X-GitHub-Api-Version: 2022-11-28" \
-#  -H 'Content-Type: application/octet-stream' \
-#  -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-#  "${RELEASE_URL}?name=${NAME}.${ARCHIVE/tmp./}"
+curl \
+  -X PUT \
+  --data-binary "@${ARCHIVE}" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  -H 'Content-Type: application/octet-stream' \
+  -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+  "${RELEASE_URL}?name=${NAME}.${ARCHIVE/tmp./}"
 #
 #
 curl \
