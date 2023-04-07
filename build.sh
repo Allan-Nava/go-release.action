@@ -23,15 +23,8 @@ if [ -x "./build.sh" ]; then
   OUTPUT=`./build.sh "${CMD_PATH}"`
 else
   #
-  if [ -z "$GOBUILD_PATH" ]; then 
-    # gobuild env is NULL
-    go build "${CMD_PATH}"
-   OUTPUT="${PROJECT_NAME}${EXT}"
-  else
-    go build "${GOBUILD_PATH}";
-   fi
-   OUTPUT="${PROJECT_NAME}${EXT}"
-   #
+  go build "${CMD_PATH}"
+  OUTPUT="${PROJECT_NAME}${EXT}"
 fi
 #
 echo ${OUTPUT}
