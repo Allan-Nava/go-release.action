@@ -1,8 +1,5 @@
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  go-release-action:
     steps:
-      # This step checks out a copy of your repository.
-      - uses: actions/checkout@v3
-      # This step references the directory that contains the action.
-      - uses: ./.github/actions/go-release-action
+      - name: Build Release 
+        uses: actions/setup-node@v3
