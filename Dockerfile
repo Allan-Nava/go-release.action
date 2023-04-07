@@ -1,7 +1,7 @@
 FROM golang:1.18-alpine
 MAINTAINER Allan Nava <allan.nava@hiway.media> (https://hiway.media)
 
-LABEL "com.github.actions.name"="Go Release Binary"
+LABEL "com.github.actions.name"="Go Release Binary V2"
 LABEL "com.github.actions.description"="Automate publishing Go build artifacts for GitHub releases"
 LABEL "com.github.actions.icon"="cpu"
 LABEL "com.github.actions.color"="orange"
