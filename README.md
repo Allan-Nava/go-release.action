@@ -30,8 +30,7 @@ jobs:
         GOARCH: "386"
         GOOS: linux
         EXTRA_FILES: "LICENSE"
-  go build "${CMD_PATH}"
-  OUTPUT="${PROJECT_NAME}${EXT}"
+        #CMD_PATH: "cmd/main.go"  for example
     #
   release-linux-amd64:
     name: release linux/amd64
@@ -45,6 +44,7 @@ jobs:
         GOARCH: amd64
         GOOS: linux
         EXTRA_FILES: "LICENSE"
+        #CMD_PATH: "cmd/main.go"  for example
     #
   release-linux-arm:
     name: release linux/386
@@ -58,6 +58,7 @@ jobs:
         GOARCH: "arm"
         GOOS: linux
         EXTRA_FILES: "LICENSE"
+        #CMD_PATH: "cmd/main.go"  for example
     #
   release-linux-arm64:
     name: release linux/amd64
@@ -71,6 +72,7 @@ jobs:
         GOARCH: arm64
         GOOS: linux
         EXTRA_FILES: "LICENSE"
+        #CMD_PATH: "cmd/main.go"  for example
     #
   release-darwin-amd64:
     name: release darwin/amd64
@@ -84,6 +86,7 @@ jobs:
         GOARCH: amd64
         GOOS: darwin
         EXTRA_FILES: "LICENSE"
+        #CMD_PATH: "cmd/main.go"  for example
     #
   release-windows-386:
     name: release windows/386
@@ -97,6 +100,7 @@ jobs:
         GOARCH: "386"
         GOOS: windows
         EXTRA_FILES: "LICENSE"
+        #CMD_PATH: "cmd/main.go"  for example
     #
   release-windows-amd64:
     name: release windows/amd64
@@ -110,4 +114,5 @@ jobs:
         GOARCH: amd64
         GOOS: windows
         EXTRA_FILES: "LICENSE"
+        #CMD_PATH: "cmd/main.go"  for example
 ```
