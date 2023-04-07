@@ -21,10 +21,16 @@ PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
 NAME="${NAME:-${PROJECT_NAME}_${RELEASE_NAME}}_${GOOS}_${GOARCH}"
 #
 echo ":: NAME=${NAME} | PROJECT_NAME=${PROJECT_NAME} ::"
+if [ -z "${NAME+x}" ]; then
+echo "::warning file=entrypoint.sh,line=24,col=1::NAME not set"
+fi
+if [ -z "${PROJECT_NAME+x}" ]; then
+echo "::warning file=entrypoint.sh,line=28,col=1::PROJECT_NAME not set"
+fi
 #
 #echo "PROJECT_NAME=${PROJECT_NAME} | NAME=$NAME | RELEASE_NAME=${RELEASE_NAME}"
 if [ -z "${EXTRA_FILES+x}" ]; then
-echo "::warning file=entrypoint.sh,line=22,col=1::EXTRA_FILES not set"
+echo "::warning file=entrypoint.sh,line=33,col=1::EXTRA_FILES not set"
 fi
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
