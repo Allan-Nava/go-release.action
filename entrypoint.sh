@@ -19,7 +19,7 @@ RELEASE_NAME=$(echo $EVENT_DATA | jq -r .release.tag_name)
 PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
 NAME="${NAME:-${PROJECT_NAME}_${RELEASE_NAME}}_${GOOS}_${GOARCH}"
 #
-echo "PROJECT_NAME=${PROJECT_NAME} | NAME=$NAME | RELEASE_NAME=${RELEASE_NAME}"
+#echo "PROJECT_NAME=${PROJECT_NAME} | NAME=$NAME | RELEASE_NAME=${RELEASE_NAME}"
 if [ -z "${EXTRA_FILES+x}" ]; then
 echo "::warning file=entrypoint.sh,line=22,col=1::EXTRA_FILES not set"
 fi
