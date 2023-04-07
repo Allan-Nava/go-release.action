@@ -7,7 +7,10 @@ mkdir -p $PROJECT_ROOT
 rmdir $PROJECT_ROOT
 ln -s $GITHUB_WORKSPACE $PROJECT_ROOT
 cd $PROJECT_ROOT
-go get -v ./...
+#
+go mod download
+#
+#go get -v ./...
 #
 EXT=''
 #
