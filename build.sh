@@ -8,6 +8,7 @@ rmdir $PROJECT_ROOT
 ln -s $GITHUB_WORKSPACE $PROJECT_ROOT
 cd $PROJECT_ROOT
 #
+#
 go mod download
 #
 #go get -v ./...
