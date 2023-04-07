@@ -20,6 +20,8 @@ RELEASE_NAME=$(echo $EVENT_DATA | jq -r .release.tag_name)
 PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
 NAME="${NAME:-${PROJECT_NAME}_${RELEASE_NAME}}_${GOOS}_${GOARCH}"
 #
+RELEASE_URL=$(echo $EVENT_DATA | jq -r .release.url)
+#
 #echo ":: NAME=${NAME} | PROJECT_NAME=${PROJECT_NAME} ::"
 if [ -z "${NAME+x}" ]; then
 echo "::warning file=entrypoint.sh,line=24,col=1::NAME not set"
@@ -47,6 +49,15 @@ tar cvfz $ARCHIVE ${FILE_LIST}
 fi
 #
 export CHECKSUM=$(md5sum ${ARCHIVE} | cut -d ' ' -f 1)
+#
+#curl \
+#  -X PUT \
+#  --data-binary "@${ARCHIVE}" \
+#  -H "X-GitHub-Api-Version: 2022-11-28" \
+#  -H 'Content-Type: application/octet-stream' \
+#  -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+#  "${RELEASE_URL}?name=${NAME}.${ARCHIVE/tmp./}"
+#
 #
 curl \
   -X POST \
