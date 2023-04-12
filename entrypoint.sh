@@ -39,6 +39,11 @@ if [ -z "${EXTRA_FILES+x}" ]; then
 echo "::warning file=entrypoint.sh,line=33,col=1::EXTRA_FILES not set"
 fi
 #
+if [ -z "${BUILD_ARGS+x}" ]; then
+echo "::warning file=entrypoint.sh,line=43,col=1::BUILD_ARGS not set"
+export BUILD_ARGS=""
+fi
+#
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
 #
 FILE_LIST=`echo "${FILE_LIST}" | awk '{$1=$1};1'`
