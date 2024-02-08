@@ -1,4 +1,4 @@
-FROM golang:1.18-alpine
+FROM golang:1.22-alpine
 MAINTAINER Allan Nava <allan.nava@hiway.media> (https://hiway.media)
 
 LABEL "com.github.actions.name"="Go Release Binary V2"
